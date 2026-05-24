@@ -362,8 +362,8 @@ export default function NexusLogin({
 
     const url =
       mode === "signup"
-        ? "http://localhost:5000/api/auth/register"
-        : "http://localhost:5000/api/auth/login";
+        ? "https://nexus-contacts-pro.onrender.com/api/auth/register"
+        : "https://nexus-contacts-pro.onrender.com/api/auth/login";
 
     const res = await axios.post(
       url,

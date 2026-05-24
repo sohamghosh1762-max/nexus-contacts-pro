@@ -601,7 +601,7 @@ const Contacts = ({ employees, setEmployees, teams, searchQuery, showToast }) =>
     try {
       if (editTarget) {
         const id = data._id || data.id;
-        const res = await axios.put(`http://localhost:5000/api/employees/${id}`, data,
+        const res = await axios.put(`https://nexus-contacts-pro.onrender.com/api/employees/${id}`, data,
   {
     headers: {
       userid: user?._id,
@@ -611,7 +611,7 @@ const Contacts = ({ employees, setEmployees, teams, searchQuery, showToast }) =>
         setEmployees(prev => prev.map(e => (e._id || e.id) === (res.data._id || res.data.id) ? res.data : e));
         showToast("Contact updated successfully", "success");
       } else {
-        const res = await axios.post("http://localhost:5000/api/employees", data,
+        const res = await axios.post("https://nexus-contacts-pro.onrender.com/api/employees", data,
   {
     headers: {
       userid: user?._id,
@@ -632,7 +632,7 @@ const Contacts = ({ employees, setEmployees, teams, searchQuery, showToast }) =>
   const deleteEmployee = async (emp) => {
     const id = emp._id || emp.id;
     try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`,
+      await axios.delete(`https://nexus-contacts-pro.onrender.com/api/employees/${id}`,
       {
         headers: {
       userid: user?._id,
@@ -1124,7 +1124,7 @@ const Calendar = ({ events = [], setEvents }) => {
   const addEvent = async () => {
     if (!newEv.title.trim() || !newEv.date) return;
     try {
-      const res = await axios.post("http://localhost:5000/api/events", { title: newEv.title, type: newEv.type, date: newEv.date });
+      const res = await axios.post("https://nexus-contacts-pro.onrender.com/api/events", { title: newEv.title, type: newEv.type, date: newEv.date });
       setEvents(prev => [...prev, res.data]);
       setNewEv({ title: "", type: "meeting", color: C.acc, date: "" });
       setShowForm(false);
@@ -1135,7 +1135,7 @@ const Calendar = ({ events = [], setEvents }) => {
 
   const deleteEvent = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/employees/${id}`,
+      await axios.delete(`https://nexus-contacts-pro.onrender.com/api/employees/${id}`,
       {
     headers: {
       userid: user?._id,
@@ -1510,7 +1510,7 @@ export default function App() {
   const showToast = (msg, type = "success") => setToast({ msg, type, key: uid() });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/employees",
+    axios.get("https://nexus-contacts-pro.onrender.com/api/employees",
     {
     headers: {
       userid: user?._id,
@@ -1520,11 +1520,11 @@ export default function App() {
       .then(res => setEmployees(res.data))
       .catch(() => console.log("Employees backend not connected"));
 
-    axios.get("http://localhost:5000/api/events")
+    axios.get("https://nexus-contacts-pro.onrender.com/api/events")
       .then(res => setEvents(res.data))
       .catch(() => console.log("Events backend not connected"));
 
-    axios.get("http://localhost:5000/api/attendance")
+    axios.get("https://nexus-contacts-pro.onrender.com/api/attendance")
       .then(res => setAttendance(res.data))
       .catch(() => console.log("Attendance backend not connected"));
   }, []);
