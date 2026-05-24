@@ -323,7 +323,16 @@ const Sidebar = ({ active, set, collapsed, setCollapsed, badge }) => (
   <motion.div animate={{ width: collapsed ? 58 : 210 }} transition={{ duration: 0.2, ease: "easeInOut" }}
     style={{ background: C.bgS, borderRight: `1px solid ${C.b}`, display: "flex", flexDirection: "column", height: "100vh", flexShrink: 0, overflow: "hidden" }}>
     <div style={{ padding: "16px 12px", borderBottom: `1px solid ${C.b}`, display: "flex", alignItems: "center", gap: 10, flexShrink: 0, minHeight: 58 }}>
-      <div style={{ width: 30, height: 30, background: "linear-gradient(135deg,#1D4ED8,#7C3AED)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, flexShrink: 0, boxShadow: "0 0 14px rgba(37,99,235,0.4)" }}>✦</div>
+      <img
+  src="/logo.png"
+  alt="Nexus Contacts Pro"
+  style={{
+    width: 38,
+    height: 38,
+    objectFit: "contain",
+    flexShrink: 0,
+  }}
+/>
       {!collapsed && (
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.tp, fontFamily: "'Syne', sans-serif", letterSpacing: "-0.01em" }}>Nexus Pro</div>
