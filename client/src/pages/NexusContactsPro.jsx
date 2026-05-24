@@ -324,7 +324,7 @@ const Sidebar = ({ active, set, collapsed, setCollapsed, badge }) => (
     style={{ background: C.bgS, borderRight: `1px solid ${C.b}`, display: "flex", flexDirection: "column", height: "100vh", flexShrink: 0, overflow: "hidden" }}>
     <div style={{ padding: "16px 12px", borderBottom: `1px solid ${C.b}`, display: "flex", alignItems: "center", gap: 10, flexShrink: 0, minHeight: 58 }}>
       <img
-  src="/logo.png"
+  src="/Logo.png"
   alt="Nexus Contacts Pro"
   style={{
     width: 38,
