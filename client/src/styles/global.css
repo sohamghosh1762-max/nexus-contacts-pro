@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080c14;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+button,
+input {
+  font-family: inherit;
+}
